@@ -9,6 +9,7 @@ public class Piston : MonoBehaviour
     public float pushInterval;
     public float pushDistance;
     public float pushSpeed;
+    public float pullSpeed;
     public float pullDelay;
     private float originalY;
     
@@ -29,7 +30,7 @@ public class Piston : MonoBehaviour
     private IEnumerator Reset(float delay)
     {
         yield return new WaitForSeconds(delay);
-        transform.DOLocalMoveY(originalY, pushSpeed).SetEase(Ease.OutCubic);
+        transform.DOLocalMoveY(originalY, pullSpeed).SetEase(Ease.OutCubic);
         StartCoroutine(Push(pushInterval + pushSpeed));
     }
 }

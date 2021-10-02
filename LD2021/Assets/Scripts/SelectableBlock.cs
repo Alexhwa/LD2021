@@ -14,6 +14,9 @@ public class SelectableBlock : MonoBehaviour
     private void Start() {
         collider = GetComponent<Collider2D>();
         rigidbody = GetComponent<Rigidbody2D>();
+        
+        gameObject.layer = LayerMask.NameToLayer("Default");
+        collider.isTrigger = true;
         rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
@@ -27,6 +30,9 @@ public class SelectableBlock : MonoBehaviour
 
     public void Load() {
         isLoaded = true;
+        gameObject.layer = LayerMask.NameToLayer("Block");
+        collider.isTrigger = false;
         rigidbody.constraints = RigidbodyConstraints2D.None;
+        transform.SetParent(null);
     }
 }

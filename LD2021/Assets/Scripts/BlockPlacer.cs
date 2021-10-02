@@ -5,14 +5,10 @@ using UnityEngine;
 public class BlockPlacer : MonoBehaviour
 {
     public new Camera camera;
+    public SpriteRenderer ghostRenderer;
 
-    new Collider2D collider;
-    SpriteRenderer ghostRenderer;
     SelectableBlock selectedBlock;
 
-    private void Start() {
-        ghostRenderer = GetComponentInChildren<SpriteRenderer>();
-    }
 
     private void OnEnable() {
         SelectableBlock.OnSelect += OnSelectBlock;

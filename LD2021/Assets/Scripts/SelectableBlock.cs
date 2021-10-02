@@ -32,7 +32,7 @@ public class SelectableBlock : MonoBehaviour
         isLoaded = true;
         gameObject.layer = LayerMask.NameToLayer("Block");
         collider.isTrigger = false;
-        rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        rigidbody.constraints = RigidbodyConstraints2D.None;
         transform.SetParent(null);
     }
 }

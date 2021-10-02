@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2802427020700334301}
   - component: {fileID: 2802427020700334302}
   - component: {fileID: 2802427020700334303}
+  - component: {fileID: 5702571271110923056}
   m_Layer: 0
   m_Name: Conveyor
   m_TagString: Untagged
@@ -128,3 +129,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 12.8, y: 1.28}
   m_EdgeRadius: 0
+--- !u!114 &5702571271110923056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2802427020700334296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d90120b7c6b02674fbba6ac2980a9dff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initPower: 10

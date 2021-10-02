@@ -2499,6 +2499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camera: {fileID: 2094718717}
   ghostRenderer: {fileID: 1800275916}
+  gridSize: 0.2
 --- !u!4 &1810437054
 Transform:
   m_ObjectHideFlags: 0

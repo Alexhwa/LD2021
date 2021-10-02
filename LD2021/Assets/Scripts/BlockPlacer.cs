@@ -7,12 +7,8 @@ public class BlockPlacer : MonoBehaviour
     public new Camera camera;
     public SpriteRenderer ghostRenderer;
 
-    new Collider2D collider;
     SelectableBlock selectedBlock;
 
-    private void Start() {
-        
-    }
 
     private void OnEnable() {
         SelectableBlock.OnSelect += OnSelectBlock;

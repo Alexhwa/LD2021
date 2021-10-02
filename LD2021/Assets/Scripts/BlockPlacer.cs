@@ -40,7 +40,8 @@ public class BlockPlacer : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && selectedBlock != null) {
             selectedBlock.transform.rotation = ghostRenderer.transform.rotation;
             selectedBlock.transform.position = ghostRenderer.transform.position;
-            selectedBlock.isLoaded = true;
+            selectedBlock.Load();
+            
             selectedBlock = null;
             ghostRenderer.sprite = null;
             ghostRenderer.transform.rotation = Quaternion.identity;

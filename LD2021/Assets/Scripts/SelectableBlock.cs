@@ -27,6 +27,7 @@ public class SelectableBlock : MonoBehaviour
 
     public void Load() {
         isLoaded = true;
-        rigidbody.constraints = RigidbodyConstraints2D.None;
+        rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+        transform.SetParent(null);
     }
 }

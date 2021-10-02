@@ -25,21 +25,26 @@ public class BlockPlacer : MonoBehaviour
     private void OnSelectBlock(SelectableBlock block) {
         selectedBlock = block;
         ghostRenderer.sprite = selectedBlock.GetComponent<SpriteRenderer>().sprite;
+        ghostRenderer.transform.rotation = Quaternion.identity;
     }
 
-
-    private void OnMouseDown() {
-        if (selectedBlock != null) {
-            selectedBlock.transform.position = ghostRenderer.transform.position;
-            selectedBlock.isLoaded = true;
-            selectedBlock = null;
-            ghostRenderer.sprite = null;
-        }
-    }
 
     private void OnMouseOver() {
         ghostRenderer.transform.position = camera.ScreenToWorldPoint(Input.mousePosition);
         ghostRenderer.transform.position = new Vector3(Mathf.Round(ghostRenderer.transform.position.x), Mathf.Round(ghostRenderer.transform.position.y), 0);
+    
+        if (Input.GetMouseButtonDown(1) && selectedBlock != null) {
+            ghostRenderer.transform.Rotate(0, 0, 90);
+        }
+
+        if (Input.GetMouseButtonDown(0) && selectedBlock != null) {
+            selectedBlock.transform.rotation = ghostRenderer.transform.rotation;
+            selectedBlock.transform.position = ghostRenderer.transform.position;
+            selectedBlock.isLoaded = true;
+            selectedBlock = null;
+            ghostRenderer.sprite = null;
+            ghostRenderer.transform.rotation = Quaternion.identity;
+        }
     }
 
     private void OnMouseEnter() {
